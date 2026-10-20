@@ -1,26 +1,58 @@
-Smart Library Management Platform
-1. Project Overview
-This project demonstrates automated AWS infrastructure provisioning and web application deployment using Terraform, Ansible, Docker, and Git.
+# SMART LIBRARY MANAGEMENT PLATFORM
+## DevOps Project Documentation Report
 
-The Smart Library Management Platform is a lightweight web application deployed on an AWS EC2 instance. Infrastructure is provisioned using Terraform, and server configuration and application deployment are automated using Ansible and Docker.
+**Project Title:** Smart Library Management Platform  
+**Project Domain:** DevOps and Cloud Computing  
+**Cloud Platform:** Amazon Web Services (AWS)  
+**Tools and Technologies:** Terraform, Ansible, Docker, Nginx, Git, GitHub, Ubuntu Linux
 
-2. Objectives
-Provision AWS infrastructure using Terraform.
-Create a VPC, subnet, internet gateway, security group, EC2 instance, and S3 bucket.
-Install and configure Docker on the target EC2 instance.
-Automate application deployment using Ansible.
-Host and verify the web application over HTTP.
-Maintain project source code using Git and GitHub.
-3. Technologies Used
-Amazon Web Services (AWS)
-Amazon EC2 and S3
-Terraform
-Ansible
-Docker
-Nginx
-Ubuntu Linux
-Git and GitHub
-4. Project Structure
+---
+
+# 1. Project Overview
+
+The Smart Library Management Platform is a lightweight web application deployed on an Amazon Web Services (AWS) EC2 instance. This project demonstrates the use of DevOps tools to automate cloud infrastructure provisioning, server configuration, and web application deployment.
+
+Terraform is used to provision the required AWS infrastructure, including a Virtual Private Cloud (VPC), subnet, internet gateway, security group, EC2 instance, and S3 bucket. Ansible automates the configuration of the target server and the deployment process. Docker is used to containerize the application, while Nginx serves the web page.
+
+Git and GitHub are used to maintain and manage the project's source code and configuration files.
+
+# 2. Project Objectives
+
+The main objectives of this project are:
+
+1. To provision AWS infrastructure using Terraform.
+2. To create and configure a VPC, public subnet, internet gateway, security group, EC2 instance, and S3 bucket.
+3. To install and configure Docker on the target EC2 instance.
+4. To automate server configuration and application deployment using Ansible.
+5. To deploy and host the web application using Docker and Nginx.
+6. To verify application accessibility through HTTP.
+7. To maintain the project source code using Git and GitHub.
+8. To apply basic security practices while managing cloud resources and project files.
+
+# 3. Technologies Used
+
+The following tools and technologies are used in this project.
+
+| Technology | Purpose |
+|---|---|
+| Amazon Web Services (AWS) | Cloud infrastructure and hosting |
+| Amazon EC2 | Virtual server for application deployment |
+| Amazon S3 | Object storage and backup bucket |
+| Terraform | Infrastructure provisioning using Infrastructure as Code |
+| Ansible | Server configuration and deployment automation |
+| Docker | Application containerization |
+| Nginx | Web server for serving the application |
+| Ubuntu Linux | Operating system for the EC2 instance |
+| Git | Version control |
+| GitHub | Remote source code repository |
+
+**[Insert Screenshot 1: Software versions and environment details]**
+
+# 4. Project Structure
+
+The project is organized into separate directories to manage the application, infrastructure, deployment automation, and documentation.
+
+```text
 smart-library-devops/
 ├── app/
 │   ├── index.html
@@ -35,38 +67,29 @@ smart-library-devops/
 │   └── screenshots/
 ├── .gitignore
 └── README.md
-5. Infrastructure Provisioning
-Terraform provisions the AWS resources required for the deployment, including:
+```
 
-Virtual Private Cloud (VPC)
-Public subnet
-Internet gateway and routing
-Security group
-EC2 instance
-S3 backup bucket
-The infrastructure was successfully created using Terraform.
+**Description of directories and files:**
 
-6. Configuration Management and Deployment
-Ansible automates the configuration of the target EC2 instance. The deployment playbook installs Docker, ensures the Docker service is running, copies the application HTML file, and starts an Nginx container.
+- **app/** – Contains the application HTML file and Dockerfile.
+- **ansible/** – Contains the Ansible playbook and an example inventory file.
+- **terraform/** – Contains Terraform configuration files for AWS infrastructure.
+- **docs/screenshots/** – Stores screenshots showing project implementation and results.
+- **.gitignore** – Specifies files and directories that should not be tracked by Git.
+- **README.md** – Provides project information, setup instructions, and usage details.
 
-The application container publishes port 80 internally through host port 8080.
+**[Insert Screenshot 2: GitHub repository showing the project structure]**
 
-7. Application Verification
-The deployed application was verified in a web browser using:
+# 5. Infrastructure Provisioning Using Terraform
 
-http://3.106.215.171:8080
+Terraform is an Infrastructure as Code (IaC) tool used to define and provision cloud resources through configuration files. In this project, Terraform is used to create the AWS infrastructure required to host the Smart Library Management Platform.
 
-The Smart Library Management Platform loaded successfully.
+The infrastructure includes the following resources:
 
-8. Security Considerations
-Private SSH keys and Terraform state files must not be committed to GitHub.
-The actual Ansible inventory is excluded from the repository.
-Restrict SSH access to trusted IP addresses instead of allowing access from all IP addresses.
-Apply least-privilege permissions to AWS IAM roles and policies.
-9. Conclusion
-The project successfully demonstrates Infrastructure as Code with Terraform, server configuration with Ansible, and containerized web application deployment using Docker and Nginx on AWS EC2. GitHub is used to maintain the project source code and configuration files.
-
-10. Future Improvements
-Implement a continuous integration and continuous deployment pipeline using GitHub Actions.
-Add application monitoring and centralized logging.
-Configure HTTPS and a domain name.
+1. **Virtual Private Cloud (VPC):** Provides an isolated network environment.
+2. **Public Subnet:** Hosts the EC2 instance and allows public connectivity when correctly configured.
+3. **Internet Gateway:** Enables communication between the VPC and the internet.
+4. **Route Table:** Directs eligible outbound traffic through the internet gateway.
+5. **Security Group:** Controls inbound and outbound network traffic.
+6. **EC2 Instance:** Provides the virtual server for application deployment.
+7. **S
